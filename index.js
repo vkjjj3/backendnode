@@ -1,6 +1,6 @@
 const express = require('express');
 /*const dotenv =*/ require('dotenv').config();
-//const bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 const { dbConnection } = require('./database/config');
 //const jsonParser = bodyParser.json(); 
 //const urlencodedParser = bodyParser.urlencoded({ extended: false });
@@ -18,8 +18,8 @@ const app = express();
 app.use(cors());
 
 //lectura y parseo del body
-app.use( express.json());
-//app.use(bodyParser.json()) 
+//app.use( express.json());
+app.use(bodyParser.json()) 
 
 //directorio publico
 app.use(express.static('public'));
